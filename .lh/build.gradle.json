@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 39,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -152,6 +152,18 @@
                 {
                     "date": 1719152123044,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,8 +224,8 @@\n task runApp(type: JavaExec) {\n     main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n     classpath = sourceSets.main.runtimeClasspath\n     jvmArgs = [\n-        '--module-path', '',\n+        '--module-path', '.',\n         '--add-modules', 'javafx.controls,javafx.fxml'\n     ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719152185695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,8 +224,8 @@\n task runApp(type: JavaExec) {\n     main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n     classpath = sourceSets.main.runtimeClasspath\n     jvmArgs = [\n-        '--module-path', '.',\n+        '--module-path', './',\n         '--add-modules', 'javafx.controls,javafx.fxml'\n     ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719152191217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,8 +224,8 @@\n task runApp(type: JavaExec) {\n     main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n     classpath = sourceSets.main.runtimeClasspath\n     jvmArgs = [\n-        '--module-path', './',\n+        '--module-path', './javafx-sdk-22.0.1/lib/',\n         '--add-modules', 'javafx.controls,javafx.fxml'\n     ]\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719152210942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,8 +224,8 @@\n task runApp(type: JavaExec) {\n     main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n     classpath = sourceSets.main.runtimeClasspath\n     jvmArgs = [\n-        '--module-path', './javafx-sdk-22.0.1/lib/',\n+        '--module-path', './javafx-sdk-22.0.1/lib',\n         '--add-modules', 'javafx.controls,javafx.fxml'\n     ]\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1719130837289,
