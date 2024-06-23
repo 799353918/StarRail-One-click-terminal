@@ -34,12 +34,7 @@ public class ColorGradientApp extends Application {
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(10.0d);
 
-        // Load background image and check if it fails
         Image backgroundImage = new Image("https://api.cenguigui.cn/api/pic/");
-        if (backgroundImage.isError()) {
-            System.err.println("Failed to load background image");
-        }
-
         BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 new BackgroundSize(100, 100, true, true, false, true));
