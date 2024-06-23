@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1719130366762,
@@ -36,6 +36,14 @@
                 {
                     "date": 1719138895974,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n // Decompiled with: Procyon 0.6.0\r\n // Class Version: 17\r\n package emu.lunarcore.server.packet.recv;\r\n \r\n-import javafx.event.ActionEvent;\r\n-import javafx.scene.Parent;\r\n import javafx.scene.Scene;\r\n import javafx.scene.layout.Background;\r\n import javafx.scene.layout.StackPane;\r\n import javafx.scene.layout.BackgroundImage;\r\n"
+                },
+                {
+                    "date": 1719143262840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-// Decompiled with: Procyon 0.6.0\r\n-// Class Version: 17\r\n+\r\n package emu.lunarcore.server.packet.recv;\r\n \r\n import javafx.scene.Scene;\r\n import javafx.scene.layout.Background;\r\n@@ -17,9 +16,8 @@\n import java.awt.Desktop;\r\n import javafx.scene.control.Hyperlink;\r\n import javafx.scene.text.TextAlignment;\r\n import javafx.scene.text.Font;\r\n-import javafx.scene.paint.Paint;\r\n import javafx.scene.paint.Color;\r\n import javafx.scene.text.Text;\r\n import javafx.scene.text.TextFlow;\r\n import javafx.stage.Stage;\r\n@@ -64,8 +62,7 @@\n         stage.setScene(scene);\r\n         stage.show();\r\n     }\r\n \r\n-    public static void main(final String[] array) {\r\n-        Application.launch(array);\r\n+ public static void main(String[] args) {\r\n+        launch(args); // 这是启动JavaFX应用的正确方式\r\n     }\r\n-}\r\n"
+                },
+                {
+                    "date": 1719143271104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,7 +62,8 @@\n         stage.setScene(scene);\r\n         stage.show();\r\n     }\r\n \r\n- public static void main(String[] args) {\r\n+    public static void main(String[] args) {\r\n         launch(args); // 这是启动JavaFX应用的正确方式\r\n     }\r\n+}\r\n"
                 }
             ],
             "date": 1719130366762,

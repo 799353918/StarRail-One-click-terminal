@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 25,
+            "activePatchIndex": 27,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -108,6 +108,14 @@
                 {
                     "date": 1719139439826,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n         attributes 'Main-Class': 'emu.lunarcore.LunarCore'\n     }\n \n     jar {\n-        archiveBaseName = 'CarolBi'\n+        archiveBaseName = 'CarolBicsi'\n         archiveVersion = ''\n     }\n \n     from {\n"
+                },
+                {
+                    "date": 1719143326757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,17 +93,8 @@\n     implementation group: 'de.bwaldvogel', name: 'mongo-java-server-h2-backend', version: '1.44.0'\n \n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n-\n-\n-    implementation 'org.openjfx:javafx-controls:17.0.2'\n-    implementation 'org.openjfx:javafx-graphics:17.0.2'\n-    implementation 'org.openjfx:javafx-base:17.0.2'\n-    implementation 'org.openjfx:javafx-fxml:17.0.2'\n-    implementation 'org.openjfx:javafx-media:17.0.2'\n-    implementation 'org.openjfx:javafx-swing:17.0.2'\n-    implementation 'org.openjfx:javafx-web:17.0.2'\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719143338338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,9 +111,9 @@\n }\n \n application {\n     // Define the main class for the application\n-    mainClassName = 'emu.lunarcore.LunarCore'\n+    mainClassName = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n }\n \n run {\n     // Set the standard input to wait for user input\n"
                 }
             ],
             "date": 1719130837289,

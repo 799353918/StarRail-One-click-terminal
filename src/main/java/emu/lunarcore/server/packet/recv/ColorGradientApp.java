@@ -63,7 +63,7 @@ public class ColorGradientApp extends Application {
         stage.show();
     }
 
-    public static void main(final String[] array) {
-        Application.launch(array);
+    public static void main(String[] args) {
+        launch(args); // 这是启动JavaFX应用的正确方式
     }
 }
