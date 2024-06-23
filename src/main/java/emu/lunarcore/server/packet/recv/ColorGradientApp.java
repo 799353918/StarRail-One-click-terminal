@@ -1,7 +1,5 @@
 package emu.lunarcore.server.packet.recv;
 
-import java.awt.Desktop;
-import java.net.URI;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.geometry.Pos;
@@ -18,12 +16,14 @@ import javafx.stage.Stage;
 
 public class ColorGradientApp extends Application {
     private static final String MESSAGE = "本软件由UP主免费分享，QQ交流群:822751143，禁止倒卖！";
-    private static final String[] COLORS = { "#ff69b4", "#ffd700", "#00ff00", "#00bfff", "#ff1493", "#ff8c00",
+    private static final String[] COLORS = {
+            "#ff69b4", "#ffd700", "#00ff00", "#00bfff", "#ff1493", "#ff8c00",
             "#7fff00", "#ff00ff", "#00ffff", "#8a2be2", "#dc143c", "#00ff7f",
             "#ff6347", "#4b0082", "#da70d6", "#ffdab9", "#ff0000", "#ff4500",
             "#ff8c00", "#ffa500", "#ffd700", "#ffff00", "#adff2f", "#7fff00",
             "#00ff00", "#00fa9a", "#00bfff", "#800080", "#ffa500", "#008000",
-            "#800000", "#ffff00" };
+            "#800000", "#ffff00"
+    };
 
     @Override
     public void start(Stage primaryStage) {
@@ -34,7 +34,12 @@ public class ColorGradientApp extends Application {
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(10.0d);
 
-        BackgroundImage backgroundImg = new BackgroundImage(new Image("https://api.cenguigui.cn/api/pic/"),
+        Image backgroundImage = new Image("https://api.cenguigui.cn/api/pic/");
+        if (backgroundImage.isError()) {
+            System.err.println("Failed to load background image");
+        }
+
+        BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 new BackgroundSize(100, 100, true, true, false, true));
         StackPane root = new StackPane(vbox);
