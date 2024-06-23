@@ -1,5 +1,4 @@
-// Decompiled with: Procyon 0.6.0
-// Class Version: 17
+
 package emu.lunarcore.server.packet.recv;
 
 import javafx.scene.Scene;
