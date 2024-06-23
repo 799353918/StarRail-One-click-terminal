@@ -92,7 +92,10 @@ dependencies {
 
     implementation group: 'org.jline', name: 'jline', version: '3.24.1'
     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'
-
+    // 添加JavaFX库依赖项，确保使用正确版本的模块名称
+    implementation 'org.openjfx:javafx-controls:17' // 根据需要替换版本号
+    implementation 'org.openjfx:javafx-graphics:17'   // 根据需要替换版本号
+    implementation 'org.openjfx:javafx-base:17'      // 根据需要替换版本号
     protobuf files('proto/')
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
