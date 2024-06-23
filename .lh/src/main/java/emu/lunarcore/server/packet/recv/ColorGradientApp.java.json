@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1719130366762,
@@ -60,6 +60,10 @@
                 {
                     "date": 1719146523427,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n package emu.lunarcore.server.packet.recv;\r\n \r\n-import java.awt.Desktop;\r\n-import java.net.URI;\r\n import javafx.application.Application;\r\n import javafx.application.HostServices;\r\n import javafx.geometry.Pos;\r\n import javafx.scene.Scene;\r\n@@ -17,14 +15,16 @@\n import javafx.stage.Stage;\r\n \r\n public class ColorGradientApp extends Application {\r\n     private static final String MESSAGE = \"本软件由UP主免费分享，QQ交流群:822751143，禁止倒卖！\";\r\n-    private static final String[] COLORS = { \"#ff69b4\", \"#ffd700\", \"#00ff00\", \"#00bfff\", \"#ff1493\", \"#ff8c00\",\r\n+    private static final String[] COLORS = {\r\n+            \"#ff69b4\", \"#ffd700\", \"#00ff00\", \"#00bfff\", \"#ff1493\", \"#ff8c00\",\r\n             \"#7fff00\", \"#ff00ff\", \"#00ffff\", \"#8a2be2\", \"#dc143c\", \"#00ff7f\",\r\n             \"#ff6347\", \"#4b0082\", \"#da70d6\", \"#ffdab9\", \"#ff0000\", \"#ff4500\",\r\n             \"#ff8c00\", \"#ffa500\", \"#ffd700\", \"#ffff00\", \"#adff2f\", \"#7fff00\",\r\n             \"#00ff00\", \"#00fa9a\", \"#00bfff\", \"#800080\", \"#ffa500\", \"#008000\",\r\n-            \"#800000\", \"#ffff00\" };\r\n+            \"#800000\", \"#ffff00\"\r\n+    };\r\n \r\n     @Override\r\n     public void start(Stage primaryStage) {\r\n         TextFlow textFlow = createGradientTextFlow(MESSAGE, COLORS);\r\n@@ -33,9 +33,14 @@\n         VBox vbox = new VBox(textFlow, hyperlink);\r\n         vbox.setAlignment(Pos.CENTER);\r\n         vbox.setSpacing(10.0d);\r\n \r\n-        BackgroundImage backgroundImg = new BackgroundImage(new Image(\"https://api.cenguigui.cn/api/pic/\"),\r\n+        Image backgroundImage = new Image(\"https://api.cenguigui.cn/api/pic/\");\r\n+        if (backgroundImage.isError()) {\r\n+            System.err.println(\"Failed to load background image\");\r\n+        }\r\n+\r\n+        BackgroundImage backgroundImg = new BackgroundImage(backgroundImage,\r\n                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,\r\n                 new BackgroundSize(100, 100, true, true, false, true));\r\n         StackPane root = new StackPane(vbox);\r\n         root.setBackground(new Background(backgroundImg));\r\n"
+                },
+                {
+                    "date": 1719149326244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n         VBox vbox = new VBox(textFlow, hyperlink);\r\n         vbox.setAlignment(Pos.CENTER);\r\n         vbox.setSpacing(10.0d);\r\n \r\n+        // Load background image and check if it fails\r\n         Image backgroundImage = new Image(\"https://api.cenguigui.cn/api/pic/\");\r\n         if (backgroundImage.isError()) {\r\n             System.err.println(\"Failed to load background image\");\r\n         }\r\n@@ -79,5 +80,5 @@\n \r\n     public static void main(String[] args) {\r\n         launch(args);\r\n     }\r\n-}\r\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1719130366762,
