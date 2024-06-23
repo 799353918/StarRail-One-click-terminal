@@ -76,5 +76,9 @@ hotfix.json
 *.exe
 *.p12
 BuildConfig.java
+<<<<<<< HEAD
 Test.java
 .fake
+=======
+Test.java
+>>>>>>> 415ee989561fab0fc7a8f24e1ed8126eca6f7086
