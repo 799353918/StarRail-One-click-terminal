@@ -15,7 +15,8 @@ public final class ActivateFarmElementCsReqOuterClass {
   /**
    * Protobuf type {@code ActivateFarmElementCsReq}
    */
-  public static final class ActivateFarmElementCsReq extends ProtoMessage<ActivateFarmElementCsReq> implements Cloneable {
+  public static final class ActivateFarmElementCsReq extends ProtoMessage<ActivateFarmElementCsReq>
+      implements Cloneable {
     private static final long serialVersionUID = 0L;
 
     /**
@@ -40,6 +41,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 entity_id = 4;</code>
+     * 
      * @return whether the entityId field is set
      */
     public boolean hasEntityId() {
@@ -48,6 +50,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 entity_id = 4;</code>
+     * 
      * @return this
      */
     public ActivateFarmElementCsReq clearEntityId() {
@@ -58,6 +61,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 entity_id = 4;</code>
+     * 
      * @return the entityId
      */
     public int getEntityId() {
@@ -66,6 +70,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 entity_id = 4;</code>
+     * 
      * @param value the entityId to set
      * @return this
      */
@@ -77,6 +82,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 world_level = 9;</code>
+     * 
      * @return whether the worldLevel field is set
      */
     public boolean hasWorldLevel() {
@@ -85,6 +91,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 world_level = 9;</code>
+     * 
      * @return this
      */
     public ActivateFarmElementCsReq clearWorldLevel() {
@@ -95,6 +102,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 world_level = 9;</code>
+     * 
      * @return the worldLevel
      */
     public int getWorldLevel() {
@@ -103,6 +111,7 @@ public final class ActivateFarmElementCsReqOuterClass {
 
     /**
      * <code>optional uint32 world_level = 9;</code>
+     * 
      * @param value the worldLevel to set
      * @return this
      */
@@ -170,8 +179,8 @@ public final class ActivateFarmElementCsReqOuterClass {
       }
       ActivateFarmElementCsReq other = (ActivateFarmElementCsReq) o;
       return bitField0_ == other.bitField0_
-        && (!hasEntityId() || entityId == other.entityId)
-        && (!hasWorldLevel() || worldLevel == other.worldLevel);
+          && (!hasEntityId() || entityId == other.entityId)
+          && (!hasWorldLevel() || worldLevel == other.worldLevel);
     }
 
     @Override
@@ -300,8 +309,7 @@ public final class ActivateFarmElementCsReqOuterClass {
       return ((bitField0_) == 0);
     }
 
-    public static ActivateFarmElementCsReq parseFrom(final byte[] data) throws
-        InvalidProtocolBufferException {
+    public static ActivateFarmElementCsReq parseFrom(final byte[] data) throws InvalidProtocolBufferException {
       return ProtoMessage.mergeFrom(new ActivateFarmElementCsReq(), data).checkInitialized();
     }
 
