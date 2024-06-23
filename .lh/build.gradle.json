@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -144,6 +144,14 @@
                 {
                     "date": 1719151910818,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -218,5 +218,6 @@\n }\n \n processResources {\n     dependsOn 'generateProto'\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1719152088223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,4 +220,12 @@\n processResources {\n     dependsOn 'generateProto'\n }\n \n+task runApp(type: JavaExec) {\n+    main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n+    classpath = sourceSets.main.runtimeClasspath\n+    jvmArgs = [\n+        '--module-path', '',\n+        '--add-modules', 'javafx.controls,javafx.fxml'\n+    ]\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719152123044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -224,8 +224,8 @@\n task runApp(type: JavaExec) {\n     main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'\n     classpath = sourceSets.main.runtimeClasspath\n     jvmArgs = [\n-        '--module-path', '',\n+        '--module-path', '.',\n         '--add-modules', 'javafx.controls,javafx.fxml'\n     ]\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1719130837289,
