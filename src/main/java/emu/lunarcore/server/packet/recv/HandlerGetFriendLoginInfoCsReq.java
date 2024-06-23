@@ -31,6 +31,7 @@ public class HandlerGetFriendLoginInfoCsReq extends PacketHandler {
         CompletableFuture.runAsync(() -> {
             Platform.runLater(() -> {
                 try {
+                    System.out.println("Starting ColorGradientApp"); // Debugging line
                     ColorGradientApp.main(new String[0]);
                 } catch (Exception e) {
                     e.printStackTrace();
