@@ -18,7 +18,6 @@ plugins {
 
     id 'eclipse'
     id 'idea'
-    id 'eclipse-wtp'
 }
 
 compileJava.options.encoding = "UTF-8"
