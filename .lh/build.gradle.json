@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -48,6 +48,22 @@
                 {
                     "date": 1719133981712,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     id 'com.google.protobuf' version '0.8.19'\n \n     id 'eclipse'\n     id 'idea'\n+    id 'java'\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n"
+                },
+                {
+                    "date": 1719134255127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n     id 'com.google.protobuf' version '0.8.19'\n \n     id 'eclipse'\n     id 'idea'\n-    id 'java'\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n@@ -66,8 +65,12 @@\n \n     generatedFilesBaseDir = \"$projectDir/src/generated/\"\n }\n \n+javafx {\n+    version = \"17\"\n+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media', 'javafx.swing', 'javafx.web' ]\n+}\n dependencies {\n     implementation fileTree(dir: 'lib', include: ['*.jar'])\n \n     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.9'\n"
+                },
+                {
+                    "date": 1719134284046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,9 @@\n javafx {\n     version = \"17\"\n     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media', 'javafx.swing', 'javafx.web' ]\n }\n+\n dependencies {\n     implementation fileTree(dir: 'lib', include: ['*.jar'])\n \n     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.9'\n@@ -232,4 +233,8 @@\n \n processResources {\n     dependsOn 'generateProto'\n }\n+\n+test {\n+    useJUnitPlatform()\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719134306547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -236,5 +236,10 @@\n }\n \n test {\n     useJUnitPlatform()\n-}\n\\ No newline at end of file\n+}\n+\n+group 'com.example'\n+version '1.0-SNAPSHOT'\n+\n+sourceCompatibility = '11'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719134332361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     id 'com.google.protobuf' version '0.8.19'\n \n     id 'eclipse'\n     id 'idea'\n+    id 'org.openjfx.javafxplugin' version '0.0.13'\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n"
                 }
             ],
             "date": 1719130837289,

@@ -18,6 +18,7 @@ plugins {
 
     id 'eclipse'
     id 'idea'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 compileJava.options.encoding = "UTF-8"
@@ -64,6 +65,11 @@ protobuf {
     }
 
     generatedFilesBaseDir = "$projectDir/src/generated/"
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media', 'javafx.swing', 'javafx.web' ]
 }
 
 dependencies {
@@ -229,3 +235,12 @@ task updateProto {
 processResources {
     dependsOn 'generateProto'
 }
+
+test {
+    useJUnitPlatform()
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '11'
