@@ -231,7 +231,3 @@ task updateProto {
 processResources {
     dependsOn 'generateProto'
 }
-
-tasks.withType(JavaCompile) {
-    options.release = 16
-}
