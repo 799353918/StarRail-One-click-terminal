@@ -4,7 +4,6 @@ package emu.lunarcore.server.packet.recv;
 
 import java.util.concurrent.CompletableFuture;
 import javafx.embed.swing.JFXPanel;
-import us.hebi.quickbuf.ProtoMessage;
 import emu.lunarcore.proto.Notify;
 import emu.lunarcore.server.packet.BasePacket;
 import emu.lunarcore.server.packet.send.PacketGetFriendLoginInfoScRsp;
