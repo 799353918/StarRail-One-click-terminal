@@ -77,3 +77,4 @@ hotfix.json
 *.p12
 BuildConfig.java
 Test.java
+.fake
