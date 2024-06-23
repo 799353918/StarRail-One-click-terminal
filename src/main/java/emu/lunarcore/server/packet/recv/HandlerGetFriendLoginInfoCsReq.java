@@ -11,10 +11,6 @@ import java.util.concurrent.CompletableFuture;
 import javafx.embed.swing.JFXPanel;
 
 @Opcodes(CmdId.GetFriendLoginInfoCsReq)
-/*
- * loaded from: CarolBicsi.jar:emu/lunarcore/server/packet/recv/
- * HandlerGetFriendLoginInfoCsReq.class
- */
 public class HandlerGetFriendLoginInfoCsReq extends PacketHandler {
     @Override // emu.lunarcore.server.packet.PacketHandler
     public void handle(GameSession session, byte[] data) throws Exception {
