@@ -7,8 +7,9 @@ import emu.lunarcore.server.packet.CmdId;
 import emu.lunarcore.server.packet.Opcodes;
 import emu.lunarcore.server.packet.PacketHandler;
 import emu.lunarcore.server.packet.send.PacketGetFriendLoginInfoScRsp;
-import java.util.concurrent.CompletableFuture;
+import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
+import java.util.concurrent.CompletableFuture;
 
 @Opcodes(CmdId.GetFriendLoginInfoCsReq)
 public class HandlerGetFriendLoginInfoCsReq extends PacketHandler {
@@ -25,13 +26,16 @@ public class HandlerGetFriendLoginInfoCsReq extends PacketHandler {
         });
 
         // Initialize JavaFX environment
-        new JFXPanel();
+        new JFXPanel(); // This initializes the JavaFX environment
+
         CompletableFuture.runAsync(() -> {
-            try {
-                ColorGradientApp.main(new String[0]);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            Platform.runLater(() -> {
+                try {
+                    ColorGradientApp.main(new String[0]);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
         }).exceptionally(ex -> {
             ex.printStackTrace();
             return null;
