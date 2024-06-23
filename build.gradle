@@ -67,10 +67,6 @@ protobuf {
     generatedFilesBaseDir = "$projectDir/src/generated/"
 }
 
-javafx {
-    version = "17"
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media', 'javafx.swing']
-}
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
