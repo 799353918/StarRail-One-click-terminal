@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -16,6 +16,14 @@
                 {
                     "date": 1719131045438,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,8 +94,9 @@\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n     // 添加JavaFX库依赖项，确保使用正确版本的模块名称\n     implementation 'org.openjfx:javafx-controls:17' // 根据需要替换版本号\n     implementation 'org.openjfx:javafx-graphics:17'   // 根据需要替换版本号\n+    implementation 'org.openjfx:javafx-base:17'      // 根据需要替换版本号\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719132084278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,11 +92,12 @@\n \n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n     // 添加JavaFX库依赖项，确保使用正确版本的模块名称\n-    implementation 'org.openjfx:javafx-controls:17' // 根据需要替换版本号\n-    implementation 'org.openjfx:javafx-graphics:17'   // 根据需要替换版本号\n-    implementation 'org.openjfx:javafx-base:17'      // 根据需要替换版本号\n+// 确保JavaFX库依赖项的版本号与您的JDK版本相匹配\n+    implementation 'org.openjfx:javafx-controls:17.0.2' // 请替换为实际的版本号\n+    implementation 'org.openjfx:javafx-graphics:17.0.2'   // 请替换为实际的版本号\n+    implementation 'org.openjfx:javafx-base:17.0.2'      // 请替换为实际的版本号\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719132089660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,10 +91,10 @@\n     implementation group: 'de.bwaldvogel', name: 'mongo-java-server-h2-backend', version: '1.44.0'\n \n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n-    // 添加JavaFX库依赖项，确保使用正确版本的模块名称\n-// 确保JavaFX库依赖项的版本号与您的JDK版本相匹配\n+\n+\n     implementation 'org.openjfx:javafx-controls:17.0.2' // 请替换为实际的版本号\n     implementation 'org.openjfx:javafx-graphics:17.0.2'   // 请替换为实际的版本号\n     implementation 'org.openjfx:javafx-base:17.0.2'      // 请替换为实际的版本号\n     protobuf files('proto/')\n"
                 }
             ],
             "date": 1719130837289,
