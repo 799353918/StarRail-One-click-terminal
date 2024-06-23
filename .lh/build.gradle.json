@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -84,6 +84,18 @@
                 {
                     "date": 1719138168239,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -230,8 +230,4 @@\n \n processResources {\n     dependsOn 'generateProto'\n }\n-\n-tasks.withType(JavaCompile) {\n-    options.release = 16\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719138643447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,20 +95,15 @@\n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n \n \n-    implementation 'org.openjfx:javafx-controls:17.0.2' // 请替换为实际的版本号\n-    implementation 'org.openjfx:javafx-graphics:17.0.2'   // 请替换为实际的版本号\n-    implementation 'org.openjfx:javafx-base:17.0.2'      // 请替换为实际的版本号\n-    implementation 'org.openjfx:javafx-controls:17'\n-    implementation 'org.openjfx:javafx-fxml:17'\n-    implementation 'org.openjfx:javafx-graphics:17'\n-    implementation 'org.openjfx:javafx-base:17'\n-    implementation 'org.openjfx:javafx-media:17'\n-    implementation 'org.openjfx:javafx-swing:17'\n-    implementation 'org.openjfx:javafx-web:17'\n-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'\n-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'\n+    implementation 'org.openjfx:javafx-controls:17.0.2'\n+    implementation 'org.openjfx:javafx-graphics:17.0.2'\n+    implementation 'org.openjfx:javafx-base:17.0.2'\n+    implementation 'org.openjfx:javafx-fxml:17.0.2'\n+    implementation 'org.openjfx:javafx-media:17.0.2'\n+    implementation 'org.openjfx:javafx-swing:17.0.2'\n+    implementation 'org.openjfx:javafx-web:17.0.2'\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719138675365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,11 @@\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n-\n+compileJava {\n+    options.compilerArgs += '--add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web'\n+}\n sourceCompatibility = JavaVersion.VERSION_17\n targetCompatibility = JavaVersion.VERSION_17\n \n version = '1.3.0'\n"
+                },
+                {
+                    "date": 1719138723312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,8 @@\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n-compileJava {\n-    options.compilerArgs += '--add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web'\n-}\n sourceCompatibility = JavaVersion.VERSION_17\n targetCompatibility = JavaVersion.VERSION_17\n \n version = '1.3.0'\n"
                 }
             ],
             "date": 1719130837289,
