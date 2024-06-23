@@ -3,7 +3,6 @@ package emu.lunarcore.server.packet.recv;
 import java.awt.Desktop;
 import java.net.URI;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
