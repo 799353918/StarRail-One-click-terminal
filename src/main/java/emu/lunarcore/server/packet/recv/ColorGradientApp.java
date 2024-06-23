@@ -2,8 +2,6 @@
 // Class Version: 17
 package emu.lunarcore.server.packet.recv;
 
-import javafx.event.ActionEvent;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.StackPane;
@@ -20,7 +18,6 @@ import java.awt.Desktop;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.Font;
-import javafx.scene.paint.Paint;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
