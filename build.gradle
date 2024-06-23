@@ -232,11 +232,6 @@ processResources {
     dependsOn 'generateProto'
 }
 
-test {
-    useJUnitPlatform()
+tasks.withType(JavaCompile) {
+    options.release = 16
 }
-
-group 'com.example'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = '11'

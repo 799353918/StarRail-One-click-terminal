@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -72,6 +72,14 @@
                 {
                     "date": 1719138021763,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,12 +66,8 @@\n \n     generatedFilesBaseDir = \"$projectDir/src/generated/\"\n }\n \n-javafx {\n-    version = \"17\"\n-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base', 'javafx.media', 'javafx.swing']\n-}\n \n dependencies {\n     implementation fileTree(dir: 'lib', include: ['*.jar'])\n \n"
+                },
+                {
+                    "date": 1719138074405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,4 @@\n \n test {\n     useJUnitPlatform()\n }\n-\n-group 'com.example'\n-version '1.0-SNAPSHOT'\n-\n-sourceCompatibility = '11'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719138080646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -231,7 +231,7 @@\n processResources {\n     dependsOn 'generateProto'\n }\n \n-test {\n-    useJUnitPlatform()\n-}\n+tasks.withType(JavaCompile) {\n+    options.release = 16\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1719130837289,
