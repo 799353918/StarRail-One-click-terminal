@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/main/java/emu/lunarcore/server/packet/recv/ColorGradientApp.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1719130366762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719130395208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-\r\n-\r\n package emu.lunarcore.server.packet.recv;\r\n \r\n import java.awt.Desktop;\r\n import java.net.URI;\r\n"
+                }
+            ],
+            "date": 1719130366762,
+            "name": "Commit-0",
+            "content": "\r\n\r\npackage emu.lunarcore.server.packet.recv;\r\n\r\nimport java.awt.Desktop;\r\nimport java.net.URI;\r\nimport javafx.application.Application;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Hyperlink;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.layout.Background;\r\nimport javafx.scene.layout.BackgroundImage;\r\nimport javafx.scene.layout.BackgroundPosition;\r\nimport javafx.scene.layout.BackgroundRepeat;\r\nimport javafx.scene.layout.BackgroundSize;\r\nimport javafx.scene.layout.StackPane;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.paint.Paint;\r\nimport javafx.scene.text.Font;\r\nimport javafx.scene.text.Text;\r\nimport javafx.scene.text.TextAlignment;\r\nimport javafx.scene.text.TextFlow;\r\nimport javafx.stage.Stage;\r\n\r\npublic class ColorGradientApp extends Application {\r\n    public void start(Stage primaryStage) {\r\n        String textContent = \"本软件由UP主免费分享，QQ交流群:822751143，禁止倒卖！\";\r\n        String[] colors = {\r\n                \"#ff69b4\", \"#ffd700\", \"#00ff00\", \"#00bfff\", \"#ff1493\", \"#ff8c00\", \"#7fff00\", \"#ff00ff\", \"#00ffff\",\r\n                \"#8a2be2\",\r\n                \"#dc143c\", \"#00ff7f\", \"#ff6347\", \"#4b0082\", \"#da70d6\", \"#ffdab9\", \"#ff0000\", \"#ff4500\", \"#ff8c00\",\r\n                \"#ffa500\",\r\n                \"#ffd700\", \"#ffff00\", \"#adff2f\", \"#7fff00\", \"#00ff00\", \"#00fa9a\", \"#00bfff\", \"#800080\", \"#ffa500\",\r\n                \"#008000\",\r\n                \"#800000\", \"#ffff00\" };\r\n        TextFlow textFlow = new TextFlow();\r\n        for (int i = 0; i < textContent.length(); i++) {\r\n            Text text = new Text(String.valueOf(textContent.charAt(i)));\r\n            text.setFill((Paint) Color.web(colors[i % colors.length]));\r\n            text.setFont(Font.font(18.0D));\r\n            textFlow.getChildren().add(text);\r\n        }\r\n        textFlow.setTextAlignment(TextAlignment.CENTER);\r\n        Hyperlink hyperlink = new Hyperlink(\"点击加群\");\r\n        hyperlink.setFont(Font.font(22.0D));\r\n        hyperlink.setOnAction(event -> {\r\n            try {\r\n                Desktop.getDesktop().browse(new URI(\"https://qm.qq.com/q/kzzOlbyZoW\"));\r\n            } catch (Exception e) {\r\n                e.printStackTrace();\r\n            }\r\n        });\r\n        VBox vbox = new VBox(new Node[] { (Node) textFlow, (Node) hyperlink });\r\n        vbox.setAlignment(Pos.CENTER);\r\n        vbox.setSpacing(10.0D);\r\n        Image backgroundImage = new Image(\"https://api.cenguigui.cn/api/pic/\");\r\n        BackgroundImage backgroundImg = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT,\r\n                BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);\r\n        StackPane root = new StackPane(new Node[] { (Node) vbox });\r\n        root.setBackground(new Background(new BackgroundImage[] { backgroundImg }));\r\n        Scene scene = new Scene((Parent) root, 400.0D, 200.0D);\r\n        primaryStage.setTitle(\"欢迎加入男娘群\");\r\n        primaryStage.setScene(scene);\r\n        primaryStage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n}\r\n"
+        }
+    ]
+}

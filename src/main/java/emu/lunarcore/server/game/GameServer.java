@@ -24,20 +24,27 @@ public class GameServer extends KcpServer {
     private final InetSocketAddress address;
     private final GameServerConfig serverConfig;
     private final RegionInfo info;
-    
+
     private final Int2ObjectMap<Player> players;
     private final Timer gameLoopTimer;
     private long lastTickTime;
-    
+
     // Managers
-    @Getter private final GameServerPacketHandler packetHandler;
-    @Getter private final GameServerPacketCache packetCache;
-    
-    @Getter private final BattleService battleService;
-    @Getter private final DropService dropService;
-    @Getter private final InventoryService inventoryService;
-    @Getter private final GachaService gachaService;
-    @Getter private final ShopService shopService;
+    @Getter
+    private final GameServerPacketHandler packetHandler;
+    @Getter
+    private final GameServerPacketCache packetCache;
+
+    @Getter
+    private final BattleService battleService;
+    @Getter
+    private final DropService dropService;
+    @Getter
+    private final InventoryService inventoryService;
+    @Getter
+    private final GachaService gachaService;
+    @Getter
+    private final ShopService shopService;
 
     public GameServer(GameServerConfig serverConfig) {
         // Game Server base
@@ -49,13 +56,13 @@ public class GameServer extends KcpServer {
         // Setup managers
         this.packetHandler = new GameServerPacketHandler();
         this.packetCache = new GameServerPacketCache();
-        
+
         this.battleService = new BattleService(this);
         this.dropService = new DropService(this);
         this.inventoryService = new InventoryService(this);
         this.gachaService = new GachaService(this);
         this.shopService = new ShopService(this);
-        
+
         // Game loop
         this.lastTickTime = System.currentTimeMillis();
         this.gameLoopTimer = new Timer();
@@ -70,7 +77,7 @@ public class GameServer extends KcpServer {
     public GameServerConfig getServerConfig() {
         return this.serverConfig;
     }
-    
+
     public int getPlayerCount() {
         synchronized (this.players) {
             return this.players.size();
@@ -82,7 +89,7 @@ public class GameServer extends KcpServer {
             this.players.put(player.getUid(), player);
         }
     }
-    
+
     public void deregisterPlayer(Player player) {
         synchronized (this.players) {
             Player check = this.players.get(player.getUid());
@@ -91,27 +98,27 @@ public class GameServer extends KcpServer {
             }
         }
     }
-    
+
     public Player getPlayerByUid(int uid, boolean allowOffline) {
         Player target = null;
-        
+
         // Get player if online
         synchronized (this.players) {
             target = this.players.get(uid);
         }
-        
+
         // Player is not online, but we arent requesting an online one
         if (target == null && allowOffline) {
             target = LunarCore.getGameDatabase().getObjectByUid(Player.class, uid);
         }
-        
+
         return target;
     }
 
     public Player getOnlinePlayerByUid(int uid) {
         return this.getPlayerByUid(uid, false);
     }
-    
+
     public Player getOnlinePlayerByAccountId(String accountUid) {
         synchronized (this.players) {
             return this.players.values()
@@ -121,25 +128,25 @@ public class GameServer extends KcpServer {
                     .orElse(null);
         }
     }
-    
+
     public List<Player> getRandomOnlinePlayers(int amount, Player filter) {
         List<Player> list = new ArrayList<>();
-        
+
         synchronized (this.players) {
             var iterator = this.players.values().iterator();
-            
+
             while (iterator.hasNext() && list.size() < amount) {
                 Player player = iterator.next();
-                
+
                 if (player != filter) {
                     list.add(player);
                 }
             }
         }
-        
+
         return list;
     }
-    
+
     public boolean deletePlayer(String accountUid) {
         // Check if player exists
         Player player = this.getOnlinePlayerByAccountId(accountUid);
@@ -147,9 +154,10 @@ public class GameServer extends KcpServer {
         // Try to get player from database
         if (player == null) {
             player = LunarCore.getGameDatabase().getObjectByField(Player.class, "accountUid", accountUid);
-            if (player == null) return false;
+            if (player == null)
+                return false;
         }
-        
+
         // Delete the player
         player.delete();
         return true;
@@ -172,20 +180,20 @@ public class GameServer extends KcpServer {
         this.info.setUp(true);
         this.info.save();
         LunarCore.getHttpServer().forceRegionListRefresh();
-        
+
         // Force a system gc after everything is loaded and started
         System.gc();
 
         // Done
-        LunarCore.getLogger().info("Game Server started on " + address.getPort());
-        LunarCore.getLogger().warn("LUNARCORE IS A FREE SOFTWARE. IF YOU PAID FOR IT, YOU HAVE BEEN SCAMMED!"); // DO NOT REMOVE. Anti-seller
+        LunarCore.getLogger().info("CarolBcsi Game Server started on " + address.getPort());
+        LunarCore.getLogger().warn("CarolBcsi Game Server 是一款免费软件。如果你付了钱，你就被骗了！"); // DO NOT REMOVE. Anti-seller
     }
-    
+
     private void onTick() {
         long timestamp = System.currentTimeMillis();
         long delta = timestamp - lastTickTime;
         this.lastTickTime = timestamp;
-        
+
         synchronized (this.players) {
             for (Player player : this.players.values()) {
                 try {
@@ -200,15 +208,15 @@ public class GameServer extends KcpServer {
     public void onShutdown() {
         // Close server socket
         this.stop();
-        
+
         // Set region info
         this.info.setUp(false);
         this.info.save();
-        
+
         // Kick and save all players
         List<Player> list = new ArrayList<>(players.size());
         list.addAll(players.values());
-        
+
         for (Player player : list) {
             player.getSession().close();
         }
