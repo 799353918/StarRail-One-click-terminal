@@ -220,3 +220,12 @@ task updateProto {
 processResources {
     dependsOn 'generateProto'
 }
+
+task runApp(type: JavaExec) {
+    main = 'emu.lunarcore.server.packet.recv.ColorGradientApp'
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [
+        '--module-path', '/path/to/javafx-sdk-17.0.1/lib',
+        '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
