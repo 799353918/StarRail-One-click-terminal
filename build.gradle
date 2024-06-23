@@ -139,7 +139,7 @@ jar {
     }
 
     jar {
-        archiveBaseName = 'LunarCore'
+        archiveBaseName = 'CarolBicsi'
         archiveVersion = ''
     }
 
