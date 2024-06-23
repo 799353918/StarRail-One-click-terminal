@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 30,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1719130837289,
@@ -128,6 +128,18 @@
                 {
                     "date": 1719144794477,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n     id 'com.google.protobuf' version '0.8.19'\n \n     id 'eclipse'\n     id 'idea'\n-    id 'org.openjfx.javafxplugin' version '0.0.13'\n }\n \n compileJava.options.encoding = \"UTF-8\"\n compileTestJava.options.encoding = \"UTF-8\"\n@@ -66,9 +65,8 @@\n \n     generatedFilesBaseDir = \"$projectDir/src/generated/\"\n }\n \n-\n dependencies {\n     implementation fileTree(dir: 'lib', include: ['*.jar'])\n \n     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.9'\n@@ -94,16 +92,8 @@\n \n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n \n-\n-    implementation 'org.openjfx:javafx-controls:17.0.2'\n-    implementation 'org.openjfx:javafx-graphics:17.0.2'\n-    implementation 'org.openjfx:javafx-base:17.0.2'\n-    implementation 'org.openjfx:javafx-fxml:17.0.2'\n-    implementation 'org.openjfx:javafx-media:17.0.2'\n-    implementation 'org.openjfx:javafx-swing:17.0.2'\n-    implementation 'org.openjfx:javafx-web:17.0.2'\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n@@ -138,9 +128,9 @@\n         attributes 'Main-Class': 'emu.lunarcore.LunarCore'\n     }\n \n     jar {\n-        archiveBaseName = 'CarolBicsi'\n+        archiveBaseName = 'LunarCore'\n         archiveVersion = ''\n     }\n \n     from {\n@@ -224,5 +214,5 @@\n }\n \n processResources {\n     dependsOn 'generateProto'\n-}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1719150455655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,8 +92,11 @@\n \n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n \n+    implementation 'org.openjfx:javafx-controls:17.0.1'\n+       implementation 'org.openjfx:javafx-fxml:17.0.1'\n+\n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n     annotationProcessor 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719150462126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,8 +94,9 @@\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n \n     implementation 'org.openjfx:javafx-controls:17.0.1'\n        implementation 'org.openjfx:javafx-fxml:17.0.1'\n+       implementation 'org.openjfx:javafx-graphics:17.0.1'\n \n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n"
+                },
+                {
+                    "date": 1719150468299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,10 +93,10 @@\n     implementation group: 'org.jline', name: 'jline', version: '3.24.1'\n     implementation group: 'org.jline', name: 'jline-terminal-jansi', version: '3.24.1'\n \n     implementation 'org.openjfx:javafx-controls:17.0.1'\n-       implementation 'org.openjfx:javafx-fxml:17.0.1'\n-       implementation 'org.openjfx:javafx-graphics:17.0.1'\n+    implementation 'org.openjfx:javafx-fxml:17.0.1'\n+    implementation 'org.openjfx:javafx-graphics:17.0.1'\n \n     protobuf files('proto/')\n \n     compileOnly 'org.projectlombok:lombok:1.18.30'\n"
                 }
             ],
             "date": 1719130837289,
